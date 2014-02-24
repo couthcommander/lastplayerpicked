@@ -6,6 +6,8 @@ who made the source code available at https://github.com/mayscopeland/priceguide
 
 ## Installation
 
+This is an R package.  See http://cran.us.r-project.org/ for details about R.
+
 ```s
 install.packages('devtools')
 library('devtools')
@@ -24,6 +26,9 @@ lz <- league(source='zips14')
 exportData(ls, 'steamer_proj')
 exportData(lo, 'oliver_proj')
 exportData(lz, 'zips_proj')
+plotPos(ls, 'Util')
+plotPos(lo, 'Util')
+plotPos(lz, 'Util')
 ```
 
 ## Beta
