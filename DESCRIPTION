@@ -1,0 +1,11 @@
+Package: lastplayerpicked
+Type: Package
+Title: Last Player Picked Price Guide
+Version: 0.15
+Date: 2013-02-07
+Author: Cole Beck
+Maintainer: Cole Beck <cole.beck@gmail.com>
+Description: Generates customized fantasy baseball dollar values
+License: file LICENSE
+LazyLoad: yes
+Depends: methods
