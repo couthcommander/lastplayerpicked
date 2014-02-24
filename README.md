@@ -21,6 +21,9 @@ l <- league()
 ls <- league(source='steamer14')
 lo <- league(source='oliver14')
 lz <- league(source='zips14')
+exportData(ls, 'steamer_proj')
+exportData(lo, 'oliver_proj')
+exportData(lz, 'zips_proj')
 ```
 
 ## Beta
