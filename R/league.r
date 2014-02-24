@@ -24,7 +24,7 @@ setMethod("initialize", "league", function(.Object, ...) {
   }
   .Object@options <- opts
   # info will hold stuff like inflationRate
-  .Object@info <- list(data=loadData(glob$data), source=glob$source)
+  .Object@info <- list(data=loadData(glob$data, source=glob$source))
 #   bf <- fileData(.Object, 'Batting', files=glob$files$batting)
 #   pf <- fileData(.Object, 'Pitching', files=glob$files$pitching)
 #   .Object@info <- list(battingFiles=bf, pitchingFiles=pf)
