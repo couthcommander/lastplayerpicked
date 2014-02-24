@@ -1,3 +1,9 @@
+Generates customized fantasy baseball dollar values.
+
+This code is a re-write of the now defunct Last Player Picked (LPP) web site.
+Thanks and credit should should go to that author (pseudonym Mays Copeland),
+who made the source code available at https://github.com/mayscopeland/priceguide.
+
 ## Installation
 
 ```s
