@@ -28,4 +28,4 @@ exportData(lz, 'zips_proj')
 
 ## Beta
 
-This package is in early development.  Many bugs need to fixed and features added.  Feel free to make suggestions.
+This package is in early development.  Many bugs need to be fixed and features added.  Feel free to make suggestions.
