@@ -261,6 +261,8 @@ setMethod("buildHitValues", "league", function(x) {
     players <- players[order(players[,'adjTotal'], decreasing=TRUE),]
     if(numberOfIterations > 0) {
       if(all(abs(stdDevs - pastStd) < 0.000001)) isSettled <- TRUE
+      # sometimes std would oscillate so break after 10
+      if(numberOfIterations > 10) isSettled <- TRUE
     }
     pastStd <- stdDevs
     hitValue <- buildTotalValue(players, nHit)
@@ -343,6 +345,8 @@ setMethod("buildPitValues", "league", function(x) {
     players <- players[order(players[,'adjTotal'], decreasing=TRUE),]
     if(numberOfIterations > 0) {
       if(all(abs(stdDevs - pastStd) < 0.000001)) isSettled <- TRUE
+      # sometimes std would oscillate so break after 10
+      if(numberOfIterations > 10) isSettled <- TRUE
     }
     pastStd <- stdDevs
     pitValue <- buildTotalValue(players, nPit)
