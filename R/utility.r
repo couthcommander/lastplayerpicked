@@ -1,7 +1,9 @@
 loadData <- function(x, source=c('steamer14', 'zips14', 'oliver14')) {
   src <- match.arg(source)
-  res <- list(batting=list(main=NULL, pt=NULL, extra=NULL), pitching=list(main=NULL, pt=NULL, extra=NULL))
+  res <- list(batting=list(main=NULL, pt=NULL, extra=NULL), pitching=list(main=NULL, pt=NULL, extra=NULL), team=NULL)
   # load defaults
+  data(playerTeam2014)
+  res$team <- playerTeam2014
   if(src == 'steamer14') {
     data(Steamer2014)
     data(PlayingTime2014)
@@ -34,6 +36,9 @@ loadData <- function(x, source=c('steamer14', 'zips14', 'oliver14')) {
       if('main' %in% names(x$pitching)) res$pitching$main <- x$pitching$main
       if('pt' %in% names(x$pitching)) res$pitching$main <- x$pitching$pt
       if('extra' %in% names(x$pitching)) res$pitching$main <- x$pitching$extra
+    }
+    if('team' %in% names(x)) {
+      res$team <- x$team
     }
   }
   res

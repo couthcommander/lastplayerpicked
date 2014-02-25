@@ -131,6 +131,12 @@ setMethod("loadPlayers", "league", function(x, playerType=c('Hitters', 'Pitchers
 #   id <- x@options$dataset
   league <- x@options$league
   players <- switch(playerType, Hitters = x@info$data$batting$main, Pitchers = x@info$data$pitching$main)
+  # merge team and league info
+  dat <- x@info$data$team
+  cats <- c('Team','league')
+  if(!is.null(dat) && all(cats %in% names(dat))) {
+    players[,cats] <- mergeFromX(players$mlbamID, dat[,c('mlbamID',cats)])
+  }
 #   players <- loadData(x, type, 'main')
   if(league != 'MLB' && 'league' %in% names(players)) {
     players <- players[players[,'league'] == league,]
